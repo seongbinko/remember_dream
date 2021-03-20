@@ -51,3 +51,13 @@
 # 테이블 설계
 
 <img width="564" alt="스크린샷 2021-03-20 오후 12 22 20" src="https://user-images.githubusercontent.com/60464424/111857744-fdac3600-8976-11eb-87cd-dc713989e4f5.png">
+
+### 2021-03-20
+
+1. 초기 환경 셋팅
+2. api 설계에 맞게 controller, service, repository 코드 작성 완료
+
+Todo list
+- TDD 작성
+- view 페이지 작성
+- 유효성 검사
