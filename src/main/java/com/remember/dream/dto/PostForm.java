@@ -1,15 +1,13 @@
 package com.remember.dream.dto;
 
 import lombok.Data;
-import lombok.Getter;
 import org.hibernate.validator.constraints.Length;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 
-//@Getter
 @Data
-public class PostRequestDto {
+public class PostForm {
 
     @NotBlank
     @Length(min = 3 , max = 20)

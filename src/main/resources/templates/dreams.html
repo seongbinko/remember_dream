@@ -1,10 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>드림리멤버</title>
-</head>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head th:replace="fragments.html :: head"></head>
 <body>
-드림 리멤버
+<div th:replace="fragments.html :: main-nav"></div>
+<table class="table table-striped text-center">
+    <thead>
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col" colspan="2">꿈 제목</th>
+        <th scope="col">작성자 명</th>
+        <th scope="col">작성일</th>
+    </tr>
+    </thead>
+    <tbody id="dream_list"></tbody>
+</table>
+
+<div th:replace="fragments.html :: footer"></div>
+<script th:replace="fragments.html :: ajax-csrf-header"></script>
+<script th:replace="fragments.html :: dreams"></script>
 </body>
 </html>

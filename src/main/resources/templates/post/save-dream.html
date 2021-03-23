@@ -1,44 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title>드림리멤버</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
-          integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-            crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-            integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-            crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"
-            integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF"
-            crossorigin="anonymous"></script>
-    <style>
-        .container {
-            max-width: 100%;
-        }
-    </style>
-</head>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head th:replace="fragments.html :: head"></head>
 <body class="bg-light">
-    <nav th:fragment="main-nav" class="navbar navbar-expand-sm navbar-dark bg-dark">
-        <a class="navbar-brand" href="/" th:href="@{/}">
-            드림 리멤버
-        </a>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item"></li>
-            </ul>
-            <ul class="navbar-nav justify-content-end">
-                <li class="nav-item">
-                    <a class="nav-link btn btn-outline-primary" th:href="@{/save_dream}">
-                        <i class="fa fa-plus" aria-hidden="true"></i> 꿈 등록
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-    <div class="py-5 text-center">
+    <div th:replace="fragments.html :: main-nav"></div>
+    <div id="main-title" class="py-5 text-center">
         <h2>꿈 등록</h2>
     </div>
     <div class="row justify-content-center">
@@ -69,12 +34,11 @@
                 <textarea id="contents" th:field="*{contents}" class="form-control"
                           aria-describedby="contentsHelp" required minlength="30" maxlength="200" rows="5"></textarea>
                 <small id="contentsHelp" class="form-text text-muted">
-                    30자 이상 200자 이내로 입력하세요. 영문자, 숫자, 특수기호를 사용할 수 있으며 공백은 사용할 수 없습니다.
+                    30자 이상 200자 이내로 입력하세요.
                 </small>
                 <small class="invalid-feedback">꿈 내용을 입력하세요.</small>
                 <small class="form-text text-danger" th:if="${#fields.hasErrors('contents')}" th:errors="*{contents}">contents Error</small>
             </div>
-
             <div class="form-group">
                 <button class="btn btn-primary btn-block" type="submit"
                         aria-describedby="submitHelp">글 등록</button>
@@ -84,26 +48,7 @@
             </div>
         </form>
     </div>
-    <script type="application/javascript" th:fragment="form-validation">
-        (function () {
-            'use strict';
-
-            window.addEventListener('load', function () {
-                // Fetch all the forms we want to apply custom Bootstrap validation styles to
-                var forms = document.getElementsByClassName('needs-validation');
-
-                // Loop over them and prevent submission
-                Array.prototype.filter.call(forms, function (form) {
-                    form.addEventListener('submit', function (event) {
-                        if (form.checkValidity() === false) {
-                            event.preventDefault();
-                            event.stopPropagation();
-                        }
-                        form.classList.add('was-validated')
-                    }, false)
-                })
-            }, false)
-        }())
-    </script>
+    <div th:replace="fragments.html :: footer"></div>
+    <script th:replace="fragments.html :: form-validation"></script>
 </body>
 </html>

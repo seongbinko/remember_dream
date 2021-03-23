@@ -1,7 +1,7 @@
 package com.remember.dream.service;
 
 import com.remember.dream.domain.Post;
-import com.remember.dream.dto.PostRequestDto;
+import com.remember.dream.dto.PostForm;
 import com.remember.dream.repository.PostRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -14,11 +14,11 @@ public class PostService {
     private  final PostRepository postRepository;
 
     @Transactional
-    public Long update(Long id, PostRequestDto postRequestDto) {
+    public Post update(Long id, PostForm postForm) {
         Post post = postRepository.findById(id).orElseThrow(
                 () -> new IllegalArgumentException("아이디가 존재하지 않습니다.")
         );
-        post.update(postRequestDto);
-        return post.getId();
+        post.update(postForm);
+        return post;
     }
 }
