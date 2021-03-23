@@ -11,7 +11,7 @@
 - 개발 기간 : 2021.03.20 ~ 2021. 03.22
 - 주요 기능 : 전체 게시글 조회, 게시글 CRUD
 - 개발 언어 : thymeleaf, css, javascript, java 8
-- 개발 환경 : springboot 2.4.4, jpa
+- 개발 환경 : springboot 2.4.4, jpa, spring-security, junit5
 - 데이터베이스 : mysql
 - 형상관리 툴 : git
 - 간단 소개 : 꿈(진짜 밤에 꾼 꿈)을 기록하는 커뮤니티
