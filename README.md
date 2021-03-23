@@ -10,7 +10,7 @@
 - 개발 인원 : 1명
 - 개발 기간 : 2021.03.20 ~ 2021. 03.22
 - 주요 기능 : 전체 게시글 조회, 게시글 CRUD
-- 개발 언어 : html, css, javascript, java 8
+- 개발 언어 : thymeleaf, css, javascript, java 8
 - 개발 환경 : springboot 2.4.4, jpa
 - 데이터베이스 : mysql
 - 형상관리 툴 : git
