@@ -20,7 +20,7 @@
 - [드림 리멤버](http://seongbindb.shop)
 - [코드 설명영상](https://www.youtube.com/watch?v=WEPJDpo-PQU)
 - [프로젝트 시연영상](https://www.youtube.com/watch?v=4oZTOPSNXKg)
-# 화면 설계 (카카오 오븐)
+# 화면 설계
 
 ## 전체페이지
 
